@@ -1,0 +1,90 @@
+2	//load. I'ma make a tree! Lots of debug comments here, but good to have
+500	//Go to 500 which is height of the lil tree
+14	//CopyToX
+26	//set up the number of spaces to X
+1 	//Load value
+1	//get into the right mode. Do NOT touch this or it has issues
+16	//set up the number of *s in Y	  	Line 7
+15	//print the X row
+27	//move onto stack
+23	//Call addr
+34	//			goto printing the spaces - line 34
+17	//print Y's *
+27	//move onto stack
+23	//Call addr
+54	//			goto printing the  * - line 54
+28	//pop and move to get the old X and print again
+23	//Call addr
+34	//			goto print X space - line 34
+23	//Call addr
+74	//goto print new line
+26	//DecX
+15	//CopyFromX
+27	//Push
+17	//CopyFromY
+14	//CopyToX
+25	//IncX
+25	//IncX
+15	//CopyFromX
+16	//CopyToY
+28	//Pop
+14	//CopyToX
+22	//JumpIfNotZero
+7	//				goto line 7
+50	//End
+27	//push AC to print space	I'm line 34
+15	//CopyFromX
+27	//Push X
+1 	//Load AC up
+3	//LoadInd addr
+14	//CopyToX
+6	//LoadSpX
+14	//CopyToX
+1 	//				*Loop*
+32	//loads from before a space
+9	//char to output
+2	//Load addr
+26	//DecX
+15	//CopyFromX
+22	//JumpIfNotZero
+42	//goto loop
+28	//Pop AC
+14	//CopyToX
+28	//Pop AC		
+24	//Return			    
+27	//Push AC - this prints *     I'm line 54
+15	//CopyFromX
+27	//Push X
+1 	//Load value
+3	//LoadInd addr
+14	//CopyToX
+6	//LoadSpX
+14	//CopyToX
+1 	//				*Loop 2*
+35	//load #
+9	//char to output
+2	//Load addr
+26	//DecX
+15	//CopyFromX
+22	//JumpIfNotZero
+62	//				goto Loop 2
+28	//Pop AC
+14	//CopyToX
+28	//Pop AC
+24	//Return
+27	//Push AC - prints the "\n"
+1 	//Load "\n"
+10	//AddX
+9	//Put Port
+2	//Load addr
+28	//Pop
+24	//Ret
+
+
+
+
+.500
+5	//Change this num to make a bigger tree. I'm happy with 5
+
+.1000	//This does nothing this time really, but has to be here
+30	//otherwise it gets really unhappy
